@@ -3,16 +3,16 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Gyaandatta - Empowering India's Future</title>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts: Lexend -->
+<title>Student Profile - Gyaandatta</title>
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -22,96 +22,273 @@
                         "primary": "#135bec",
                         "background-light": "#f6f6f8",
                         "background-dark": "#101622",
+                        "card-dark": "#182132",
+                        "text-secondary": "#92a4c9",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #324467;
+            border-radius: 3px;
+        }
+        
+        /* Hide scrollbar for horizontal scrolling elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary/30">
-<!-- Main Container -->
-<div class="relative flex h-full min-h-screen w-full flex-col">
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
 <!-- Top App Bar -->
-<div class="flex items-center justify-between p-5 pb-2 z-20">
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-12 bg-transparent text-slate-900 dark:text-white p-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+</button>
+</div>
+</div>
+<!-- Profile Header -->
+<div class="flex flex-col p-4 pt-2">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-3 flex-col items-center relative">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-28 w-28 ring-4 ring-primary/20" data-alt="Portrait of a young student smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcGJ28qm7eqcwn1cJcTsZHO9vwJOYOupr3jKcSeT3vUz_tkfzksrx3AH--HLFZJjmd6LfivStkanJOf3SAITkhCd0V-PLQfjKQy9ACyfuelNrm-iCtC925jOMmCYfGT6l51rZ98J9pt5q0V2HyRbGvBYVLvgj0SpupNbWzQ65eqmYeuirtdl-ClgrysmnHEdA-We3zYy_pK85PPGwJvqoq2p88r0jFKqvr9AI9XK5Imyj4IxgTfUlO2DmCr232jA1Xh77ipTGBug");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-1.5 border-4 border-background-light dark:border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 16px;">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<div class="flex items-center gap-1.5">
+<h1 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] text-center">Aarav Patel</h1>
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;" title="Verified Student">verified</span>
+</div>
+<p class="text-slate-500 dark:text-text-secondary text-sm font-normal leading-normal text-center mt-1">Class 12 • Science Stream</p>
+<div class="mt-2 px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">school</span>
+<span class="text-primary text-xs font-medium">Gyaandatta Scholar</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Reputation / Stats -->
+<div class="flex flex-wrap gap-3 px-4 py-2">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 p-4 items-center text-center shadow-sm">
+<div class="relative flex items-center justify-center size-14 mb-1">
+<!-- Circular progress mockup using SVG -->
+<svg class="size-full -rotate-90" viewbox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<path class="text-slate-200 dark:text-slate-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-primary" style="font-size: 24px;">verified_user</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">850</p>
+<p class="text-slate-500 dark:text-text-secondary text-xs font-medium uppercase tracking-wide">Trust Score</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 p-4 items-center text-center shadow-sm justify-center">
+<div class="flex items-center justify-center size-14 mb-1 rounded-full bg-yellow-500/10 text-yellow-500">
+<span class="material-symbols-outlined" style="font-size: 28px;">emoji_events</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">Top 5%</p>
+<p class="text-slate-500 dark:text-text-secondary text-xs font-medium uppercase tracking-wide">Rank</p>
+</div>
+</div>
+<!-- Quick Actions Grid -->
+<div class="grid grid-cols-4 gap-2 px-4 py-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">edit_square</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Edit</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Certs</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">supervisor_account</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Mentors</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Saved</span>
+</button>
+</div>
+<!-- Skills Section -->
+<div class="flex flex-col px-4 pt-2">
+<div class="flex items-center justify-between pb-3">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Skill Proficiency</h3>
+<div class="flex items-center gap-1 px-2 py-1 rounded bg-purple-500/10 border border-purple-500/20">
+<span class="material-symbols-outlined text-purple-400" style="font-size: 14px;">auto_awesome</span>
+<span class="text-xs font-medium text-purple-400">AI Insights</span>
+</div>
+</div>
+<!-- Skill Chart Card -->
+<div class="bg-white dark:bg-card-dark rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm mb-4">
+<div class="flex items-start justify-between mb-4">
+<div>
+<p class="text-slate-500 dark:text-text-secondary text-sm">Strongest Subject</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold">Physics &amp; AI</p>
+</div>
+<span class="bg-green-500/10 text-green-500 text-xs font-bold px-2 py-1 rounded">+12% vs avg</span>
+</div>
+<!-- Radar Chart Representation using HTML/CSS shapes for visualization -->
+<div class="relative w-full aspect-[16/9] flex items-center justify-center overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-900/50">
+<!-- Background Grid Lines -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[80%] h-[80%] border border-slate-200 dark:border-slate-700/30 rounded-full"></div>
+<div class="absolute w-[50%] h-[50%] border border-slate-200 dark:border-slate-700/30 rounded-full"></div>
+<div class="absolute w-[20%] h-[20%] border border-slate-200 dark:border-slate-700/30 rounded-full"></div>
+<!-- Axis Lines -->
+<div class="absolute w-full h-px bg-slate-200 dark:bg-slate-700/30"></div>
+<div class="absolute h-full w-px bg-slate-200 dark:bg-slate-700/30"></div>
+<div class="absolute w-full h-px bg-slate-200 dark:bg-slate-700/30 rotate-45"></div>
+<div class="absolute h-full w-px bg-slate-200 dark:bg-slate-700/30 rotate-45"></div>
+</div>
+<!-- The "Chart" Shape (SVG Polygon) -->
+<svg class="absolute w-[60%] h-[60%] z-10 drop-shadow-lg" viewbox="0 0 100 100">
+<polygon fill="rgba(19, 91, 236, 0.2)" points="50,5 90,35 80,85 20,85 10,35" stroke="#135bec" stroke-width="2"></polygon>
+<!-- Data Points -->
+<circle class="fill-primary" cx="50" cy="5" r="3"></circle>
+<circle class="fill-primary" cx="90" cy="35" r="3"></circle>
+<circle class="fill-primary" cx="80" cy="85" r="3"></circle>
+<circle class="fill-primary" cx="20" cy="85" r="3"></circle>
+<circle class="fill-primary" cx="10" cy="35" r="3"></circle>
+</svg>
+<!-- Labels -->
+<span class="absolute top-2 text-[10px] font-medium text-slate-400">Logic</span>
+<span class="absolute bottom-2 left-4 text-[10px] font-medium text-slate-400">Coding</span>
+<span class="absolute bottom-2 right-4 text-[10px] font-medium text-slate-400">Math</span>
+<span class="absolute top-1/2 left-2 text-[10px] font-medium text-slate-400 -translate-y-1/2">Chem</span>
+<span class="absolute top-1/2 right-2 text-[10px] font-medium text-slate-400 -translate-y-1/2">Phy</span>
+</div>
+</div>
+</div>
+<!-- Goals Section -->
+<div class="flex flex-col px-4 pb-24">
+<div class="flex items-center justify-between pb-3 mt-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">My Goals</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Goal Item 1 -->
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
 <div class="flex items-center gap-3">
-<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-<span class="material-symbols-outlined" style="font-size: 24px;">school</span>
+<div class="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">code</span>
 </div>
-<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Gyaandatta</h2>
-</div>
-</div>
-<!-- Scrollable Content Area -->
-<div class="flex-1 flex flex-col items-center justify-center px-5 pt-4 pb-4">
-<!-- Hero Visual / Carousel Item -->
-<div class="w-full relative group/card mb-8">
-<!-- Image Container -->
-<div class="w-full aspect-[4/5] bg-gray-800 rounded-2xl overflow-hidden relative shadow-2xl shadow-black/50 border border-white/5">
-<!-- Main Hero Image -->
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Abstract 3D network of glowing blue nodes connecting on a dark background representing AI and community" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnGXGdDlMkbcV9vtJI-Tdcqt__xKf5r98t0tpG09mpcchCIbo_fw8_KwJwuLLrb63rNmWrgxseafuyOxRmshv0mp_AVSnLHJvxz2WgnnpEc45H-1bYXoE6wXvSSPhz2IeaioefYIkyy8oEmwluzYZJlzSd8IrYau4w4B_gbqSdMciWd9g_4RWubraQ3SmTsYr31FTmn_eqhKWQCYrvZFHgEFwAhHFwygWdp4aL_Q7qNkDbF6qaMCPLN3HySav2L5r1sQ6HPXeMLQ");'>
-</div>
-<!-- Gradient Overlay for readability -->
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"></div>
-<!-- Floating Data Card (Visual Element) -->
-<div class="absolute bottom-6 left-6 right-6 bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/20 p-4 rounded-xl">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs font-semibold text-white uppercase tracking-wider">Active Students</span>
-<span class="material-symbols-outlined text-green-400 text-sm">trending_up</span>
-</div>
-<div class="flex items-end gap-2">
-<span class="text-2xl font-bold text-white">10,432</span>
-<span class="text-xs text-gray-300 mb-1">+124 today</span>
+<div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-sm">Complete Python Basics</h4>
+<p class="text-slate-500 dark:text-text-secondary text-xs">Due in 2 days</p>
 </div>
 </div>
+<span class="text-slate-900 dark:text-white font-bold text-sm">80%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
 </div>
 </div>
-<!-- Carousel Text Content -->
-<div class="w-full text-center space-y-3 px-2">
-<h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">
-                    Empowering India’s Future
-                </h1>
-<p class="text-gray-500 dark:text-[#92a4c9] text-base font-normal leading-relaxed max-w-xs mx-auto">
-                    Join a community-driven ecosystem for real-time collaboration and AI-powered learning.
-                </p>
+<!-- Goal Item 2 -->
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">science</span>
 </div>
-<!-- Carousel Indicators -->
-<div class="flex gap-2 mt-6 justify-center">
-<div class="w-8 h-1.5 bg-primary rounded-full"></div>
-<div class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
-<div class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-sm">Physics: Kinematics</h4>
+<p class="text-slate-500 dark:text-text-secondary text-xs">Due in 5 days</p>
 </div>
 </div>
-<!-- Action Area -->
-<div class="w-full p-5 pb-8 space-y-4 bg-background-light dark:bg-background-dark z-10">
-<!-- Primary Button -->
-<button class="group relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-primary/25">
-<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-<span class="text-white text-base font-bold leading-normal tracking-[0.015em]">Create Account</span>
+<span class="text-slate-900 dark:text-white font-bold text-sm">45%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-orange-500 h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Goal Item 3 -->
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-sm">Calculus: Limits</h4>
+<p class="text-slate-500 dark:text-text-secondary text-xs">Started today</p>
+</div>
+</div>
+<span class="text-slate-900 dark:text-white font-bold text-sm">10%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-green-500 h-2 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#111722]/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 pb-safe max-w-md mx-auto">
+<div class="flex justify-around items-center h-16 px-2">
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">home</span>
+<span class="text-[10px] font-medium">Home</span>
 </button>
-<!-- Secondary Button -->
-<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-transparent border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:scale-[0.98]">
-<span class="truncate text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">I already have an account</span>
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+<span class="text-[10px] font-medium">Explore</span>
 </button>
-<!-- Meta Text / Social Proof -->
-<div class="pt-2">
-<p class="text-gray-500 dark:text-[#92a4c9] text-sm font-normal leading-normal text-center flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-lg">verified_user</span>
-                    Trusted by top educators
-                </p>
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-primary">
+<span class="material-symbols-outlined filled" style="font-size: 24px; font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">groups</span>
+<span class="text-[10px] font-medium">Community</span>
+</button>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-5 w-full"></div>
 </div>
 </div>
-</div>
+<script>
+        // Simple script to toggle dark mode for demonstration
+        // In a real app, this would be handled by system preference or user settings
+        // Currently forced to dark mode by class="dark" on html tag as per requirements
+    </script>
 </body></html>
