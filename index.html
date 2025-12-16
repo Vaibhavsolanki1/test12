@@ -3,11 +3,9 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Group Study Rooms - Gyaandatta</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<title>Study Room Chat - Gyaandatta</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -19,24 +17,24 @@
                         "primary": "#135bec",
                         "background-light": "#f6f6f8",
                         "background-dark": "#101622",
+                        "surface-dark": "#1a2332",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
 <style>
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .no-scrollbar::-webkit-scrollbar {
+        /* Custom Scrollbar for chat area */
+        .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 <style>
@@ -45,221 +43,183 @@
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white transition-colors duration-200">
-<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
-<!-- Top App Bar -->
-<div class="sticky top-0 z-30 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="flex flex-col gap-2 p-4 pb-2">
-<div class="flex items-center h-12 justify-between">
-<div class="flex items-center gap-3">
-<div class="relative">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile picture showing a smiling student" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArwA6gqkXEYDG8ciXRgxCUyCfEOrq_7tan1e3tN-IQfSPNpbTJtN3dqVZfa8r_hOlqDkbWe20Kk0fHMRW4k2441IgFaUrHNih7F5MLzB1VOsulf46yRI_sQB1NvDFc5mljVB-9_Tb4Wnz7avIeLnoa1ii71vR27X8dgWv9BJZuF7VEIOp-Xr8kNt06jfI7panOKDduCFInN7tybf97kG7iRpnXpJw5V_XAt5BVRAUMDEn-0gRJLcm1QQQNA2zEfo-DIsEkfTqOYg");'>
-</div>
-<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-background-light dark:border-background-dark"></div>
-</div>
-<div>
-<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Welcome back,</p>
-<p class="text-sm font-bold leading-none">Arjun Kumar</p>
-</div>
-</div>
-<div class="flex items-center justify-end gap-2">
-<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-[#192233] transition-colors text-gray-600 dark:text-gray-300">
-<span class="material-symbols-outlined text-[24px]">add_box</span>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display h-screen flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="shrink-0 bg-surface-dark/50 dark:bg-background-dark border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
 </button>
-<button class="relative flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-[#192233] transition-colors text-gray-600 dark:text-gray-300">
-<span class="material-symbols-outlined text-[24px]">notifications</span>
-<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
-</button>
-</div>
-</div>
-<div class="mt-2">
-<h1 class="tracking-tight text-3xl font-bold leading-tight">Study Rooms</h1>
-</div>
-</div>
-</div>
-<!-- Search Bar -->
-<div class="px-4 py-2">
-<label class="flex flex-col h-12 w-full">
-<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
-<div class="text-gray-400 dark:text-gray-500 flex items-center justify-center pl-4 pr-2">
-<span class="material-symbols-outlined text-[24px]">search</span>
-</div>
-<input class="flex w-full min-w-0 flex-1 bg-transparent text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none h-full px-2 text-base font-normal leading-normal" placeholder="Search Physics, JEE Prep, or Python..." value=""/>
-</div>
-</label>
-</div>
-<!-- Filter Chips -->
-<div class="flex gap-2 p-4 overflow-x-auto no-scrollbar">
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-5 pr-5 shadow-md shadow-primary/20">
-<p class="text-white text-sm font-medium leading-normal">All</p>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 pl-5 pr-5 hover:bg-gray-50 dark:hover:bg-[#232f48] transition-colors">
-<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Science</p>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 pl-5 pr-5 hover:bg-gray-50 dark:hover:bg-[#232f48] transition-colors">
-<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Commerce</p>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 pl-5 pr-5 hover:bg-gray-50 dark:hover:bg-[#232f48] transition-colors">
-<span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span>
-<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">AI Help</p>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 pl-5 pr-5 hover:bg-gray-50 dark:hover:bg-[#232f48] transition-colors">
-<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Competitive Exams</p>
-</button>
-</div>
-<!-- Live Now Section -->
-<div class="flex flex-col gap-2 pt-2">
-<div class="flex items-center justify-between px-4">
+<div class="flex flex-col items-center flex-1 mx-2">
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] truncate">Physics 101 - Group A</h2>
 <div class="flex items-center gap-2">
-<span class="relative flex h-3 w-3">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-</span>
-<h2 class="text-xl font-bold leading-tight">Live Now</h2>
-</div>
-<button class="text-primary text-sm font-medium">See All</button>
-</div>
-<div class="flex overflow-x-auto no-scrollbar pb-4 px-4 gap-4 snap-x">
-<!-- Card 1 -->
-<div class="snap-start flex flex-col shrink-0 w-[280px] rounded-2xl bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-<div class="relative w-full h-36">
-<div class="w-full h-full bg-center bg-cover" data-alt="Abstract calculus equations on a blackboard background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSEBVHdILHgyqd44jGcdfdRy8zpA6Yk8lDi5ZG-MwYMAIz1n5sOcvsxO6N7DkNXShI95PdUU3b5oHNav8w_NuHeHd2ZxwXjruhlARIrQU5ZTlXZndJzFiYbVhliUrvXhiq_WMHunRr1elLGK-jkthKDzVDmdviPWgiwWC0Y5Je0NSsulXXEjNEIEcz5lB8r7UdgBveOXeZUwIx899Fti4E9BvqNE3e51dBIf1jMLle-QEGukXfNGPf5xQ4AkRO3lWybw-vZlItdQ");'>
-</div>
-<div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">
-                            Live
-                        </div>
-<div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">group</span>
-                            12/50
-                        </div>
-</div>
-<div class="p-4 flex flex-col gap-3 flex-1">
-<div>
-<h3 class="text-lg font-bold leading-snug line-clamp-1 mb-1">JEE Advanced Math</h3>
-<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
-<span>Host: AI Tutor Beta</span>
+<div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+<p class="text-[#92a4c9] text-xs font-medium tracking-wide">00:45:12</p>
 </div>
 </div>
-<div class="flex items-center -space-x-2 overflow-hidden mb-1">
-<img alt="Student 1" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233]" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB49nXdzm2ypGGYbCIuP2mjUPlZ9hwDVG12mb9Q6FBvDYiDCTocMpq4iaGXVLjPVjkIVBV-mvbiwccrQOCInENEGYljEgiYD55Ga7hPbiZ3NW0gyXVxRk-8kU8T0ouyobBNoEoaJHoreKltSo1g0MhKg5bKBIlb-IcLn_YMVrpoz6IcetsXq7K9uD-UnV9bYE1OIqEias8S1T_oTUPEbMLZCpDAqmTprrP9eLa_pbGCA-woRHB9pWFVhUBWtMKpCRaUZX8Dx-7kvw"/>
-<img alt="Student 2" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233]" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtU8ng1O1mKIeimOGEgS61k-LK2kA9VU7maxkelumqV_fMtTTRTc3dLi6eofDW0GsJfark9c7HVRDQGYMmF7iT8mg4hLFcPRxOei-EdPC8rqpiaXflpt9DNYTYUAlrUl4lRWj-Dr9tiZ3OTf0XMUyZfp4-uOsK5z_7ojjX5LIvY_sx_g9pytzPioXy6SiCz1jLsYVCphBY7GMmBl5xmL0qbFP5Gcnp9rVu9TkGRQe9Lc8_lbEpoTANKsbxxh9bF69TAjEBhnwp_Q"/>
-<img alt="Student 3" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233]" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcrqQ1xlT-xfiHockDkXEGWiWLmoTBTvufB9obNkMK-KqK1tJCaOW9Qy9fk3ek8EqxN7yX7qRs4xt_YVCgUlLvAn_HdFEPix7iXs9gw0rvah_b2Cr17GowJ0LJQNTgHoMM0k2A1F_ojmggHZm-Cb_EIUJipC6AQkkcuwXP9QBFK4P2DTOPVVrcu8Ro8G4v2MTp7jmQYkij-CaVBJ5RJKltEQ1TPWuNwlj9f4KXboBUmgVn_xy_MJQrMRW2xhRmixvTxzMsuf_MaQ"/>
-<div class="flex items-center justify-center h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233] bg-gray-100 dark:bg-gray-700 text-[10px] font-medium">+9</div>
-</div>
-<button class="w-full mt-auto bg-primary hover:bg-blue-600 text-white font-bold py-2 rounded-lg text-sm transition-colors">
-                            Join Room
-                        </button>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="snap-start flex flex-col shrink-0 w-[280px] rounded-2xl bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-<div class="relative w-full h-36">
-<div class="w-full h-full bg-center bg-cover" data-alt="Python code displayed on a computer screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBxUVy7F5Sahsbg4llzWJpDZhIPoMqFXDz3NSi6mOi42xwpjK3miuYc0dCykjLsgLXnUIUvc0e96M5lXfe4d4pkvOq7fPex1OXKN5TQr4Ewr9qXT3r_XA3T7cw6nwY5W-lEmt1AiyVisS8oq8DPc8Eanwh9SjMfmIWVaL2ChyyUK6VI6lQxrrVcl2xQTgaUmCFP8MR9pwjiDicBovcTu2f_g70Mobx_D0gAIx3IFqcamH2rmyTnpeGeEZRynWnxMP7rSrL1dzgHQ");'>
-</div>
-<div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">
-                            Live
-                        </div>
-<div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">group</span>
-                            45/100
-                        </div>
-</div>
-<div class="p-4 flex flex-col gap-3 flex-1">
-<div>
-<h3 class="text-lg font-bold leading-snug line-clamp-1 mb-1">Python for Beginners</h3>
-<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-[16px]">person</span>
-<span>Host: Rahul Verma</span>
-</div>
-</div>
-<div class="flex items-center -space-x-2 overflow-hidden mb-1">
-<img alt="Student 1" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233]" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4R2llN3fTMJwkACPSSrNhb9S7GneZ3xlqVypAghIW_8Mjnc2VEu04vHvCIjEhWBw4vw_DbxsD_-4CSD2sO7HzWb39z9b7Ev-9UIz2Qfj7nNIJMoeV-W0RkC3qZGKVoiQPyaQVrKMbtFbmfPuxe7EhbdEfNC1q1zky-qrcQAoYBpRhKfkTz6y4AILjVJIDOcdx7GhPUCDo2wDuthu8OdiXOCc7ldZUGrbu6hnG1OtdNR7l1vK4IOfdjQWSUQHqreJ5FNp1quvLw"/>
-<img alt="Student 2" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233]" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS46idcFU1OBuafnKxLM7m0CbX-ptYCeTzrnavM-5WbuhU_7prcuXOuUpHqDkNefEwIBAPEMYwSHnrAgwtpRuyEVI8KCA72FHSrHt9NJKQ2zlSEHBeAmEfHsJ2ft37Q8zs8f8k7gty7ZDaAouT94g9TR8YGOugLUVWswq09pVNKDiEqXsqU3gzMYr46EM2ZkGh2BAsnFFHBNbfeP21aWXYfYS8CR_R_G0n1OkrRfKtn0H-tXGsVTX-eonyg9vu_c9ES6NnIuz5KQ"/>
-<div class="flex items-center justify-center h-6 w-6 rounded-full ring-2 ring-white dark:ring-[#192233] bg-gray-100 dark:bg-gray-700 text-[10px] font-medium">+42</div>
-</div>
-<button class="w-full mt-auto bg-primary hover:bg-blue-600 text-white font-bold py-2 rounded-lg text-sm transition-colors">
-                            Join Room
-                        </button>
-</div>
-</div>
-</div>
-</div>
-<!-- Upcoming Section -->
-<div class="flex flex-col gap-4 px-4 pt-4 pb-8">
-<h2 class="text-xl font-bold leading-tight">Upcoming Sessions</h2>
-<div class="flex flex-col gap-3">
-<!-- Upcoming Card 1 -->
-<div class="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 shadow-sm">
-<div class="flex flex-col items-center justify-center min-w-[60px] h-[60px] bg-primary/10 dark:bg-primary/20 rounded-lg text-primary">
-<span class="text-xs font-bold uppercase">Today</span>
-<span class="text-lg font-bold">18:00</span>
-</div>
-<div class="flex flex-col flex-1 min-w-0">
-<h3 class="text-base font-bold truncate">Organic Chemistry Doubt Clearing</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 truncate">Host: Priya Singh • 120 Registered</p>
-</div>
-<button class="flex items-center justify-center size-10 rounded-full bg-gray-50 dark:bg-[#232f48] text-primary hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+<button class="flex items-center justify-center px-3 py-1.5 rounded-full bg-red-500/10 hover:bg-red-500/20 text-red-500 transition">
+<span class="text-xs font-bold uppercase tracking-wider">Leave</span>
 </button>
 </div>
-<!-- Upcoming Card 2 -->
-<div class="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 shadow-sm">
-<div class="flex flex-col items-center justify-center min-w-[60px] h-[60px] bg-gray-100 dark:bg-[#232f48] rounded-lg text-gray-500 dark:text-gray-400">
-<span class="text-xs font-bold uppercase">Tomorrow</span>
-<span class="text-lg font-bold">10:00</span>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden relative w-full max-w-md mx-auto h-full">
+<!-- Video Grid (Active Stage) -->
+<div class="shrink-0 p-3 bg-surface-dark dark:bg-[#0c101a]">
+<div class="grid grid-cols-2 gap-2">
+<!-- Participant 1 (Speaking) -->
+<div class="relative aspect-video rounded-xl overflow-hidden border-2 border-primary shadow-[0_0_15px_rgba(19,91,236,0.3)]">
+<img alt="Young female student portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhOrtMaTL1bWCCk6cEkDM5FrSHIFao12mdfdyWSapBKvgy9DquuyKuyt9uuNTTGawKfCJMAJCmx9e9gt-JLD0rnHz-SnZvP1CeJw6QJf0vr6VipGZyCw3LsMq5tcfmjn_CecVzTeCwYxOkjGoaoP9II8bMh63WaM0ZIgLznGM7Y_f0lD-cnjwbrcdsAhmg4ScXhfYLWuyxZYzrRMjNcSURO6Q8jKCDw9MOHdl3NuDER0xmZbcpQirhCxOlqHTyxvScPDjZgqursQ"/>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur px-2 py-0.5 rounded text-[10px] font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-green-400">mic</span> Amit (You)
+                    </div>
 </div>
-<div class="flex flex-col flex-1 min-w-0">
-<h3 class="text-base font-bold truncate">English Literature Discussion</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 truncate">Host: Literature Club • 45 Registered</p>
+<!-- Participant 2 -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-800">
+<img alt="Male student smiling portrait" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJC2Y8xsdngtTfilqGyttOlLGb0JEc9cmgYyUONzfjSDvdiykrqkjyOzg-V-WfcYGRWlxPOAyrx8aduGB4aSJDvYdq2mZ8DdjX_s5eEmkI-BE8Gul5A63ehnXQM0s4plGp3HejRhpfOO5e9o7JoH58YsosthPOw1SO1kvlZ-nULBzcTegpT7pP6N7HIdOINDz6i6pSgRFqP3ziUY37RWePRVEkgDOsR8l3g55zWEVodxN2u2YL9wSHL-5MkgnK7awaVbpDFL7lrg"/>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur px-2 py-0.5 rounded text-[10px] font-medium text-white">
+                        Rahul
+                    </div>
+<div class="absolute top-2 right-2 p-1 bg-black/50 rounded-full">
+<span class="material-symbols-outlined text-[12px] text-white">mic_off</span>
 </div>
-<button class="flex items-center justify-center size-10 rounded-full bg-gray-50 dark:bg-[#232f48] text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">notifications_none</span>
+</div>
+<!-- Participant 3 -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-800">
+<img alt="Female student looking at notes" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5wGkWrQoe2RidlKEmnUZczJilK0bJE6AuaDBpYqdJVO2u6GZCrKdB9mUftHfyrVBReSz1MCxGt1EV169ZifKU9iJIbYoPyT9kPAZzXqqNvKIFSMcDqxPXyMS4_aUeOoofYmHWwU15diGW2fYWCozFA6xthK1tHGFW1f5oEBMcofvKhaDeG5STdaJGPxHGHKj5DXvEHNhDuaw1MqFzQOdsQQyrpTclOLyRHkZbIh0jJPbpJcXiRlVGg-nvMg6Tx0mlTmBkqphcww"/>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur px-2 py-0.5 rounded text-[10px] font-medium text-white">
+                        Priya
+                    </div>
+</div>
+<!-- Participant 4 (No Video / Placeholder) -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-[#232f48] flex items-center justify-center">
+<div class="size-10 rounded-full bg-primary/20 text-primary flex items-center justify-center text-lg font-bold">S</div>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur px-2 py-0.5 rounded text-[10px] font-medium text-white">
+                        Simran
+                    </div>
+<div class="absolute top-2 right-2 p-1 bg-black/50 rounded-full">
+<span class="material-symbols-outlined text-[12px] text-white">videocam_off</span>
+</div>
+</div>
+</div>
+<!-- Collaboration Controls -->
+<div class="flex items-center justify-center gap-6 mt-3 pb-1">
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg group-active:scale-95 transition">
+<span class="material-symbols-outlined text-xl">mic</span>
+</div>
+<span class="text-[10px] text-gray-400">Mute</span>
 </button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-10 rounded-full bg-surface-dark border border-white/10 text-white flex items-center justify-center group-active:scale-95 transition">
+<span class="material-symbols-outlined text-xl">videocam</span>
 </div>
-<!-- Upcoming Card 3 -->
-<div class="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-[#192233] border border-gray-200 dark:border-gray-800 shadow-sm">
-<div class="flex flex-col items-center justify-center min-w-[60px] h-[60px] bg-gray-100 dark:bg-[#232f48] rounded-lg text-gray-500 dark:text-gray-400">
-<span class="text-xs font-bold uppercase">12 Oct</span>
-<span class="text-lg font-bold">14:30</span>
+<span class="text-[10px] text-gray-400">Video</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-10 rounded-full bg-surface-dark border border-white/10 text-white flex items-center justify-center group-active:scale-95 transition">
+<span class="material-symbols-outlined text-xl">pan_tool</span>
 </div>
-<div class="flex flex-col flex-1 min-w-0">
-<h3 class="text-base font-bold truncate">History: The Mughal Empire</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 truncate">Host: Gyaandatta AI • 200+ Interested</p>
+<span class="text-[10px] text-gray-400">Raise</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-10 rounded-full bg-surface-dark border border-white/10 text-white flex items-center justify-center group-active:scale-95 transition">
+<span class="material-symbols-outlined text-xl">present_to_all</span>
 </div>
-<button class="flex items-center justify-center size-10 rounded-full bg-gray-50 dark:bg-[#232f48] text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">notifications_none</span>
+<span class="text-[10px] text-gray-400">Share</span>
 </button>
 </div>
 </div>
-<button class="w-full py-3 text-sm font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors">
-                View Schedule Calendar
-            </button>
-</div>
-<!-- Spacer for Bottom Nav -->
-<div class="h-24"></div>
-<!-- Bottom Navigation Bar -->
-<div class="fixed bottom-0 left-0 w-full bg-white/90 dark:bg-[#101622]/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 z-50 pb-safe">
-<div class="flex items-center justify-around h-16">
-<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[24px]">home</span>
-<span class="text-[10px] font-medium">Home</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-primary">
-<span class="material-symbols-outlined text-[24px] filled">groups</span>
-<span class="text-[10px] font-medium">Community</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[24px]">psychology</span>
-<span class="text-[10px] font-medium">AI Tools</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[24px]">person</span>
-<span class="text-[10px] font-medium">Profile</span>
-</button>
-</div>
-<!-- Safe area spacing for iOS Home Indicator -->
-<div class="h-[env(safe-area-inset-bottom)] w-full"></div>
+<!-- Chat Stream -->
+<div class="flex-1 overflow-y-auto scrollbar-hide bg-background-light dark:bg-background-dark px-4 pt-2 pb-24 space-y-4">
+<!-- System Message -->
+<div class="flex justify-center my-4">
+<div class="bg-primary/10 border border-primary/20 px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-primary">radio_button_checked</span>
+<p class="text-primary text-xs font-medium">Priya started recording the session.</p>
 </div>
 </div>
+<!-- Incoming Message (Rahul) -->
+<div class="flex items-end gap-3 group">
+<div class="size-8 rounded-full overflow-hidden bg-gray-700 shrink-0">
+<img alt="Rahul avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCV2REDtEbPZ04AF3GsfgOiYIcLY_MWN5jgwSHLYA2sHBsCrNA6MwX4TkBMH2AN8mGZfjh2-GakpqrqoRH4tVd4gLRQiOErUQDIANusi1tMOJkJYb9XYjehdNJ_I0ypvpqgdGZ7JmuJR1FAxFk_rhwDe_dMjL5INBlgee0QiV4jqM-_hTqEk5IICCE3qZU3NmSqIe5EnE45PbF6MGcFHWV9cXJWrtAJV0j8ObwUYuJIDjOy5fuDXJ2oCZ4390zxojxjEjj1Fl1Yw"/>
+</div>
+<div class="flex flex-col gap-1 items-start max-w-[80%]">
+<div class="flex items-baseline gap-2">
+<span class="text-[#92a4c9] text-xs font-medium">Rahul</span>
+<span class="text-gray-600 dark:text-gray-500 text-[10px]">10:42 AM</span>
+</div>
+<div class="p-3 bg-white dark:bg-[#232f48] rounded-2xl rounded-bl-none shadow-sm text-slate-800 dark:text-gray-100 text-sm leading-relaxed">
+                        Can we go over the Newton's 2nd law problem again? I'm getting stuck on the friction part.
+                    </div>
+</div>
+</div>
+<!-- Incoming Message (Simran) with Attachment -->
+<div class="flex items-end gap-3 group">
+<div class="size-8 rounded-full bg-primary/20 shrink-0 flex items-center justify-center text-primary text-xs font-bold">
+                    S
+                </div>
+<div class="flex flex-col gap-1 items-start max-w-[80%]">
+<div class="flex items-baseline gap-2">
+<span class="text-[#92a4c9] text-xs font-medium">Simran</span>
+<span class="text-gray-600 dark:text-gray-500 text-[10px]">10:43 AM</span>
+</div>
+<div class="p-3 bg-white dark:bg-[#232f48] rounded-2xl rounded-bl-none shadow-sm text-slate-800 dark:text-gray-100 text-sm leading-relaxed flex flex-col gap-2">
+<p>Check this diagram out, it helped me visualize the forces.</p>
+<div class="rounded-lg overflow-hidden relative group/img cursor-pointer border border-white/10">
+<img alt="Physics diagram" class="w-full h-32 object-cover" data-alt="Physics free body diagram sketch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT4HeBCmMBHnVf3np5zG8Gg_ImM_nbDkmB7x3c-9YWEKULr0hcW_VirBVXAj1QHcDEA8uR8S_oPGZC980CHUKD-J8Ouo_cF1ecmYEMQiDmNGGsh9fYAEuUPgPB2zqjcHC9m4Dgmvg7D7KVCJE5Cai_bOHzQ4f-cxjKeGd8BwF8SHrdHUIXRw5oSoiAD-yvY0ffhlMOAF7wQtsoODhzTr377JXhn0r1wticuKVPkHrg3SUeYW3pNt4iM_VHwECHgZOyXgTd3qZ9_g"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Bot Summary -->
+<div class="flex items-start gap-3 my-4">
+<div class="size-8 rounded-full bg-purple-600/20 shrink-0 flex items-center justify-center border border-purple-500/30">
+<span class="material-symbols-outlined text-purple-400 text-sm">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1 items-start w-full">
+<span class="text-purple-400 text-xs font-bold">Gyaan AI • Summary</span>
+<div class="w-full p-3 bg-purple-900/10 border border-purple-500/20 rounded-xl rounded-tl-none text-purple-100 text-xs leading-relaxed">
+                        The group is currently discussing <span class="font-bold text-white">force and acceleration</span>. Rahul asked for clarification on friction coefficients. Simran shared a diagram.
+                    </div>
+</div>
+</div>
+<!-- Outgoing Message (Me) -->
+<div class="flex items-end gap-3 justify-end group">
+<div class="flex flex-col gap-1 items-end max-w-[80%]">
+<div class="p-3 bg-primary text-white rounded-2xl rounded-br-none shadow-md text-sm leading-relaxed">
+                        Oh right! F = ma applies to the net force, not just the applied force. Thanks Simran!
+                    </div>
+<span class="text-gray-500 text-[10px]">Read 10:45 AM</span>
+</div>
+</div>
+<!-- New Message Indicator -->
+<div class="flex justify-center">
+<div class="bg-surface-dark/80 backdrop-blur px-3 py-1 rounded-full shadow-lg border border-white/5 cursor-pointer hover:bg-surface-dark transition flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">arrow_downward</span>
+<span class="text-xs text-white">New messages</span>
+</div>
+</div>
+</div>
+<!-- Sticky Input Area -->
+<div class="absolute bottom-0 w-full bg-surface-dark/95 backdrop-blur-xl border-t border-white/5 p-3 pb-6 z-20">
+<div class="flex items-end gap-2">
+<button class="shrink-0 size-10 flex items-center justify-center rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 bg-[#0c101a] rounded-2xl border border-white/10 focus-within:border-primary/50 transition flex items-center px-4 py-2 min-h-[44px]">
+<textarea class="w-full bg-transparent border-none p-0 text-sm text-white placeholder-gray-500 focus:ring-0 resize-none h-5 max-h-24 scrollbar-hide leading-5" placeholder="Type a message or ask AI..." rows="1"></textarea>
+<button class="ml-2 text-gray-400 hover:text-primary transition">
+<span class="material-symbols-outlined text-lg">sentiment_satisfied</span>
+</button>
+</div>
+<button class="shrink-0 size-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90 transition shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</main>
 </body></html>
